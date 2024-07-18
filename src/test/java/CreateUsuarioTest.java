@@ -5,16 +5,17 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CrudUsuarioPage;
+import pages.CreateUsuarioPage;
 
 import java.time.Duration;
 
-public class CrudUsuarioTest extends BaseTest {
+public class CreateUsuarioTest extends BaseTest {
     String resultadoEsperado = "Usuário cadastrado com sucesso!";
+    CreateUsuarioPage page = new CreateUsuarioPage(getDriver());
 
     @Test
-    public void validarCadastro(){
-        CrudUsuarioPage page = new CrudUsuarioPage(getDriver());
+    public void validarCadastro () {
+
 
         String resultadoFinal = page.informarNomeUsuario("Elen Sant'Anna Filipeto")
                 .informarEmailUsuario("elensantanna1011@gmail.com")
@@ -49,4 +50,7 @@ public class CrudUsuarioTest extends BaseTest {
 //        Assert.assertTrue(resultadoFinal.contains("Telefone celular: 51 99999-0000"));
 //        Assert.assertTrue(resultadoFinal.contains("Usuário ativo?: Sim"));
     }
+
+
+
 }

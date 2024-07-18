@@ -6,18 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
+public class CreateUsuarioPage extends BasePage {
 
-public class CrudUsuarioPage extends BasePage {
-
-    public CrudUsuarioPage(WebDriver driver){super(driver);}
+    public CreateUsuarioPage(WebDriver driver){super(driver);}
 
     //procurando o campo nome pelo id
     @FindBy(id = "nomeUsuario")
     private WebElement txtNomeUsuario;
 
     //enviando o nome
-    public CrudUsuarioPage informarNomeUsuario(String nome){
+    public CreateUsuarioPage informarNomeUsuario(String nome){
         txtNomeUsuario.sendKeys(nome);
         return this;
     }
@@ -27,7 +25,7 @@ public class CrudUsuarioPage extends BasePage {
         private WebElement txtEmailUsuario;
 
     //enviando o email
-    public CrudUsuarioPage informarEmailUsuario(String email){
+    public CreateUsuarioPage informarEmailUsuario(String email){
         txtEmailUsuario.sendKeys(email);
         return this;
     }
@@ -37,7 +35,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement txtLoginUsuario;
 
     //enviando login
-    public CrudUsuarioPage informarLoginUsuario(String login){
+    public CreateUsuarioPage informarLoginUsuario(String login){
         txtLoginUsuario.sendKeys(login);
         return this;
     }
@@ -47,7 +45,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement txtSenhaUsuario;
 
     //enviando senha
-    public CrudUsuarioPage informarSenhaUsuario(String senha){
+    public CreateUsuarioPage informarSenhaUsuario(String senha){
         txtSenhaUsuario.sendKeys(senha);
         return this;
     }
@@ -57,7 +55,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement selDia;
 
     //enviando o dia do cadastro
-    public CrudUsuarioPage selecionarDiaCadastro(String diaCadastro){
+    public CreateUsuarioPage selecionarDiaCadastro(String diaCadastro){
         Select selectDia = new Select(selDia);
         selectDia.selectByVisibleText(diaCadastro);
         return this;
@@ -68,7 +66,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement selMes;
 
     //enviando o mes
-    public CrudUsuarioPage selecionarMesCadastro(String mesCadastro){
+    public CreateUsuarioPage selecionarMesCadastro(String mesCadastro){
         Select selectMes = new Select(selMes);
         selectMes.selectByVisibleText(mesCadastro);
         return this;
@@ -79,7 +77,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement selAno;
 
     //enviando o ano
-    public CrudUsuarioPage selecionarAnoCadastro(String anoCadastro){
+    public CreateUsuarioPage selecionarAnoCadastro(String anoCadastro){
         Select selectAno = new Select(selAno);
         selectAno.selectByVisibleText(anoCadastro);
         return this;
@@ -90,7 +88,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement txtTelefoneCelular;
 
     //enviando o telefone
-    public CrudUsuarioPage informarTelefoneCelular(String telefoneCelular){
+    public CreateUsuarioPage informarTelefoneCelular(String telefoneCelular){
         txtTelefoneCelular.sendKeys(telefoneCelular);
         return this;
     }
@@ -103,7 +101,7 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement rdUsuarioInativo;
 
     //selecionandoo usuário ativo
-    public CrudUsuarioPage selecionarUsuarioAtivo(){
+    public CreateUsuarioPage selecionarUsuarioAtivo(){
         rdUsuarioAtivo.click();
         return this;
     }
@@ -113,13 +111,16 @@ public class CrudUsuarioPage extends BasePage {
     private WebElement btnCadastrar;
 
     //clicando em cadastrar usuário
-    public CrudUsuarioPage clicarCadastrar(){
+    public CreateUsuarioPage clicarCadastrar(){
         btnCadastrar.click();
         return this;
     }
 
     //verificando o resultado
     public String buscarCadastroSucesso(){return driver.getPageSource();}
+
+
+
 
 
 }
